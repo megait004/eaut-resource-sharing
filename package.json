@@ -1,0 +1,13 @@
+{
+  "name": "eaut-resource-sharing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./config/input.css -o ./public/style/style.css --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
