@@ -35,12 +35,13 @@ try {
         case '/test':
             phpinfo();
             break;
-        // case '/meo':
-        //     ob_start();
-        //     include_once 'meo/index.php';
-        //     $content = ob_get_clean();
-        //     echo renderLayout('Trang chu', $content);
-        //     break;
+
+        case '/testcss':
+            ob_start();
+            include_once 'pages/testcss.php';
+            $content = ob_get_clean();
+            echo renderLayout('test css', $content);
+            break;
 
         case '/':
             ob_start();
@@ -48,6 +49,7 @@ try {
             <div class="text-center">
                 <h1 class="text-4xl font-bold">Hello World</h1>
                 <a href="/test" class="text-blue-500 hover:underline">test php</a>
+                <a href="/testcss" class="text-blue-500 hover:underline">test css</a>
             </div>
             <?php
             $content = ob_get_clean();
