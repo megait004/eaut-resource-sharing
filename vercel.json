@@ -5,14 +5,5 @@
         }
     },
     "buildCommand": "",
-    "routes": [
-        {
-            "src": "/assets/(.*)",
-            "dest": "/api/assets/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
-    ]
+    "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }]
 }
