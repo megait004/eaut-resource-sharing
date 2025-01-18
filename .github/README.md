@@ -4,7 +4,6 @@
 -   PHP 8.3.8
 -   PostgreSQL 17
 -   Node.js 20
--   Slim 4.14
 
 ### .env setup
 
