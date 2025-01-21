@@ -1,4 +1,8 @@
 ## [Link Demo](https://php.giapzech.tech/)
+#### Run project local
+```bash
+php -S localhost:8000 api/index.php
+```
 ### Tech Stack
 
 -   PHP 8.3.8
