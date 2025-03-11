@@ -1,8 +1,19 @@
-# .env
-/vendor
-.env
-.vercel
-composer.lock
-bun.lockb
+# Local
+.DS_Store
+*.local
+*.log*
+
+# Dist
 node_modules
+dist/
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Lockfile
 pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lockb
