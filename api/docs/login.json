@@ -1,0 +1,76 @@
+{
+    "method": "POST",
+    "path": "/api/login",
+    "description": "Đăng nhập vào hệ thống",
+    "requestBody": {
+        "email": "abc@email.com",
+        "password": "mat_khau_vip"
+    },
+    "responses": {
+        "200": {
+            "description": "Đăng nhập thành công",
+            "content": {
+                "status": true,
+                "message": "Đăng nhập thành công",
+                "data": {
+                    "user": {
+                        "email": "abc@email.com",
+                        "full_name": "Nguyen Van A",
+                        "role": "admin"
+                    }
+                }
+            }
+        },
+        "400": {
+            "description": "Dữ liệu không hợp lệ",
+            "content": {
+                "status": false,
+                "message": "VCL điền thiếu kìa!",
+                "data": null
+            }
+        },
+        "401": {
+            "description": "Thông tin đăng nhập không chính xác",
+            "content": {
+                "status": false,
+                "message": "WTF sai hết rồi!",
+                "data": null
+            }
+        },
+        "405": {
+            "description": "Phương thức không được phép",
+            "content": {
+                "status": false,
+                "message": "WTF! Chỉ xài POST thôi",
+                "data": null
+            }
+        },
+        "500": {
+            "description": "Lỗi server",
+            "content": {
+                "status": false,
+                "message": "VL server sập!",
+                "data": null
+            }
+        }
+    },
+    "notes": [
+        "Email và password là bắt buộc",
+        "Chỉ chấp nhận phương thức POST",
+        "Password được mã hóa bằng password_hash"
+    ],
+    "validations": [
+        {
+            "field": "email",
+            "type": "string",
+            "required": true,
+            "format": "email"
+        },
+        {
+            "field": "password",
+            "type": "string",
+            "required": true,
+            "minLength": 1
+        }
+    ]
+}

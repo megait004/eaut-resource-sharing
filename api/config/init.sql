@@ -3,7 +3,8 @@ create table
         id bigint primary key generated always as identity,
         email text unique not null,
         password text not null,
-        role text check (role in ('teacher', 'student')) not null
+        full_name text,
+        role text not null check (role in ('teacher', 'student'))
     );
 
 create table
@@ -12,7 +13,10 @@ create table
         title text not null,
         content text,
         download_link text not null,
-        uploaded_by bigint references users (id) on delete cascade
+        uploaded_by bigint references users (id) on delete cascade,
+        created_at timestamp
+        with
+            time zone default now ()
     );
 
 create table
@@ -35,13 +39,6 @@ create table
         with
             time zone default now ()
     );
-
-alter table users
-add column full_name text not null;
-
-alter table users alter column role
-set
-    not null;
 
 create table
     tags (

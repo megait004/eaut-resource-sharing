@@ -1,6 +1,6 @@
 # .env
 /vendor
-.env
+# .env
 .vercel
 composer.lock
 bun.lockb

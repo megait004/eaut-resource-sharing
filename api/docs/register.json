@@ -1,0 +1,83 @@
+{
+    "method": "POST",
+    "path": "/api/register",
+    "description": "Đăng ký tài khoản mới",
+    "requestBody": {
+        "email": "example@email.com",
+        "password": "mat_khau_manh",
+        "full_name": "Nguyen Van A",
+        "role": "student"
+    },
+    "responses": {
+        "201": {
+            "description": "Đăng ký thành công",
+            "content": {
+                "status": true,
+                "message": "Đăng ký thành công!",
+                "data": {
+                    "user": {
+                        "email": "example@email.com",
+                        "full_name": null,
+                        "role": "student"
+                    }
+                }
+            }
+        },
+        "400": {
+            "description": "Dữ liệu không hợp lệ",
+            "content": {
+                "status": false,
+                "message": "Vui lòng điền đầy đủ thông tin!",
+                "data": null
+            }
+        },
+        "405": {
+            "description": "Phương thức không được phép",
+            "content": {
+                "status": false,
+                "message": "Chỉ chấp nhận phương thức POST!",
+                "data": null
+            }
+        },
+        "500": {
+            "description": "Lỗi server",
+            "content": {
+                "status": false,
+                "message": "Lỗi server!",
+                "data": null
+            }
+        }
+    },
+    "notes": [
+        "Email phải đúng định dạng",
+        "Password sẽ được mã hóa trước khi lưu",
+        "Role chỉ chấp nhận 'teacher' hoặc 'student'",
+        "Email phải là duy nhất trong hệ thống",
+        "full_name là tùy chọn"
+    ],
+    "validations": [
+        {
+            "field": "email",
+            "type": "string",
+            "required": true,
+            "format": "email"
+        },
+        {
+            "field": "password",
+            "type": "string",
+            "required": true,
+            "minLength": 6
+        },
+        {
+            "field": "full_name",
+            "type": "string",
+            "required": false
+        },
+        {
+            "field": "role",
+            "type": "string",
+            "required": true,
+            "enum": ["teacher", "student"]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "method": "GET",
+    "path": "/api/phpinfo",
+    "description": "Xem thông tin cấu hình PHP",
+    "note": "Trả về trang thông tin chi tiết về cấu hình PHP của server",
+    "link": "/api/phpinfo",
+    "target": "_blank"
+}
